@@ -1,27 +1,7 @@
 <template>
   <div id="aapp" >
-    <div id='container'>
-           <div class="wrapper" 
-                v-for="item in arrList"
-                v-bind:todo="item"
-                v-bind:key="item.id"
-    >
-                <div class="img" > {{item.id}} </div>
-                <div class="title"> {{item.title}} </div>
-                <div class="text"> {{item.text}} </div>
-                <div class="price"> {{item.price}} </div>
-          </div>
-    </div>
-   
-        <br>
-      <input v-model="img"> 
-      <input v-model="title"> 
-      <input v-model="text"> 
-      <input v-model="price"> 
-      <button class="btn" @click="funPush"></button>
-      
-    
-    
+        <TodoItem/>
+        <ValidForma v-for="user in users" :key="user.id" :user="user"/>
   </div>
 </template>
 
@@ -31,39 +11,35 @@ import ValidForma from './ValidForma.vue'
 
 
 
+
 export default {
   components: {
     TodoItem,
     ValidForma
   },
+  
 
   data() {
+
     return {
      
-         img: 'href',
-         title: 'some title',
-         text: 'some name',
-         price: '1000',
-         newObj: {},
-         arrList: [
-             {id :0, title:'Наименование товара', img:"href", text:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,', price:'3000'},
-            
-         ],
+          users: [
+                    { name: "Michael", position: 4 },
+                    { name: "Dwight", position: 1 },
+                    { name: "Jim", position: 9 },
+                    { name: "Pam", position: 3 },
+                    { name: "Andy", position: 2 }
+          ],
     }
     
   },
   methods: {
     funPush() {
-    
-      this.newObj.img = this.img
-      this.newObj.title = this.title
-      this.newObj.text = this.text
-      this.newObj.price = this.price
 
-      
-      this.arrList.push(this.newObj)
-   
-    }
+    
+    },
+
+  
   }
 
  
@@ -71,6 +47,10 @@ export default {
 </script>
 
 <style lang="scss">
+#aapp{
+ display: flex;
+ flex-direction: row-reverse;
+ float: left;
   button{
     width: 100px;
     height: 20px;
@@ -79,8 +59,9 @@ export default {
   #container{
     display: flex;
     flex-direction: row;
-    width: 1000px;
+    width: 1150px;
     background: greenyellow;
+      flex-wrap: wrap;
 
     .wrapper{
         background: gold;
@@ -108,4 +89,12 @@ export default {
         }
     }
   }
+  .container-form{
+    
+    width: 300px;
+    height: 500px;
+    background: lightcoral;
+  }
+}
+
 </style>
