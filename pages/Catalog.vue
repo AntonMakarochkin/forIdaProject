@@ -1,9 +1,12 @@
 <template>
 <div id="app">
+      <button @click='sort'></button>
+                <button @click='sortPlus'></button>
+                <button @click='sortName'></button>
   <div id='container'>
        <div class="wrapper" 
                v-for="(item, index) in list" :key="index"
-    >
+    >           
                 <div class="img" > {{item.href}} </div>
                 <div class="title"> {{ item.title }} </div>
                 <div class="text">{{item.text}} </div>
@@ -38,13 +41,19 @@
 </template>
 
 <script>
+import ValidForma from './ValidForma.vue'
+
 export default {
+
+components: {
+    ValidForma
+  },
   data() {
     return {
       list: [
-           {text:'Текст', title:'Наименование товара', price: 1000, href:'href'},
-           {text:'Текст', title:'Наименование товара', price: 1200, href:'href'}, 
-           {text:'Текст', title:'Наименование товара', price: 1300, href:'href'}
+           {text:'Текст', title:'a', price: 1000, href:'href'},
+           {text:'Текст', title:'c', price: 1200, href:'href'}, 
+           {text:'Текст', title:'b', price: 1300, href:'href'}
           
           ],
             errorsTitle: [],
@@ -63,6 +72,19 @@ export default {
     deleteFromList(index) {
       this.list.splice(index, 1);
     }, 
+          sort() {
+        this.list = this.list.sort(function(a, b) {return a.price - b.price})
+        },
+        sortPlus() {
+        this.list = this.list.sort((a, b) =>b.price - a.price )
+        },
+        sortName() {
+        this.list = this.list.sort(function(a, b){
+    if(a.title < b.title) { return -1; }
+    if(a.title > b.title) { return 1; }
+    return 0;
+})
+        },
    
     
     getName() {

@@ -1,7 +1,6 @@
 <template>
   <div id="aapp" >
         <TodoItem/>
-        <ValidForma v-for="user in users" :key="user.id" :user="user"/>
   </div>
 </template>
 
@@ -11,25 +10,16 @@ import ValidForma from './ValidForma.vue'
 
 
 
-
 export default {
   components: {
     TodoItem,
     ValidForma
   },
-  
 
   data() {
-
     return {
      
-          users: [
-                    { name: "Michael", position: 4 },
-                    { name: "Dwight", position: 1 },
-                    { name: "Jim", position: 9 },
-                    { name: "Pam", position: 3 },
-                    { name: "Andy", position: 2 }
-          ],
+        
     }
     
   },
