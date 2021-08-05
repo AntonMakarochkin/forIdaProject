@@ -1,7 +1,7 @@
 # forIP
 
 ## Build Setup
-
+ДЛЯ ЗАПУСКА НЕОБХОДИМО КЛОНИРОВАТЬ РЕПОЗИТОРИЙ git clone https://github.com/UTonyFast/forIdaProject и запустить nuxt npm run dev
 ```bash
 # install dependencies
 $ npm install
