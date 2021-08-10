@@ -1,7 +1,7 @@
 # forIP
 
 ## Build Setup
-ДЛЯ ЗАПУСКА НЕОБХОДИМО КЛОНИРОВАТЬ РЕПОЗИТОРИЙ git clone https://github.com/UTonyFast/forIdaProject и запустить nuxt npm run dev
+ДЛЯ ЗАПУСКА НЕОБХОДИМО КЛОНИРОВАТЬ РЕПОЗИТОРИЙ git clone https://github.com/UTonyFast/forIdaProject и запустить nuxt npm run dev !--Используйте ветку withAnimation
 ```bash
 # install dependencies
 $ npm install
